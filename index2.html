@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TechFest 2025 | Home</title>
+  <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+  <header>
+    <h1>Welcome to IIPS TechFest 2025</h1>
+    <p>Join the most exciting tech event of the year! Learn, build, and connect with innovators and creators from around the DAVV and indore.</p>
+    <a href="register.html" class="btn">Register Now</a>
+  </header>
+
+  <section>
+    <h2>About the Event</h2>
+    <p>
+      TechFest 2025 brings together developers, engineers, designers, and entrepreneurs 
+      for a weekend of learning and innovation. Attend workshops, hackathons, and live webinars 
+      led by top industry experts.
+    </p>
+
+    <h2>Highlights</h2>
+    <ul>
+      <li>🚀 Interactive workshops on AI, IoT, and Web3</li>
+      <li>💡 Coding competitions and hackathons</li>
+      <li>🎤 Talks by industry leaders</li>
+      <li>🎁 Exciting prizes and certificates</li>
+    </ul>
+  </section>
+
+  <footer style="text-align:center; padding:20px; color:#475569;">
+    © 2025 TechFest | All Rights Reserved
+  </footer>
+<script>
+  const themeButton = document.createElement("button");
+  themeButton.className = "theme-toggle";
+  themeButton.title = "Toggle theme";
+  themeButton.textContent = "🌓";
+  document.querySelector("header").appendChild(themeButton);
+
+  // Load saved theme
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") document.body.classList.add("dark");
+
+  // Toggle theme
+  themeButton.addEventListener("click", () => {
+    document.body.classList.toggle("dark");
+    const theme = document.body.classList.contains("dark") ? "dark" : "light";
+    localStorage.setItem("theme", theme);
+  });
+</script>
+
+</body>
+</html>

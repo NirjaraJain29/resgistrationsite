@@ -1,0 +1,224 @@
+/* ---------- Base Reset ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ---------- Light Theme (default) ---------- */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #eff6ff, #dbeafe);
+  color: #1e293b;
+  transition: background 0.4s, color 0.4s;
+}
+
+header {
+  text-align: center;
+  padding: 80px 20px;
+  background: linear-gradient(120deg, #2563eb, #06b6d4);
+  color: white;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  position: relative;
+}
+
+header h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+header p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 10px auto;
+}
+
+/* ---------- Theme Toggle Button ---------- */
+.theme-toggle {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  background: white;
+  border: none;
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1);
+}
+
+/* ---------- Content Sections ---------- */
+section {
+  max-width: 700px;
+  margin: 50px auto;
+  background: white;
+  padding: 30px 40px;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+h2 {
+  text-align: center;
+  color: #1e40af;
+}
+
+/* ---------- Buttons ---------- */
+button, .btn {
+  background: white;
+  color: #2563eb;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 20px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+button:hover, .btn:hover {
+  background: #f0f9ff;
+  transform: scale(1.05);
+}
+
+/* ---------- Form ---------- */
+form label {
+  display: block;
+  margin: 12px 0 5px;
+  font-weight: 500;
+}
+
+input, select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 1rem;
+  margin-bottom: 15px;
+  transition: border-color 0.3s ease;
+}
+
+input:focus, select:focus {
+  border-color: #2563eb;
+  outline: none;
+}
+
+.gender {
+  margin-bottom: 10px;
+}
+
+button[type="submit"] {
+  background: linear-gradient(90deg, #2563eb, #06b6d4);
+  color: white;
+}
+
+/* ---------- Table ---------- */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th, td {
+  border: 1px solid #cbd5e1;
+  padding: 12px;
+  text-align: center;
+}
+
+th {
+  background-color: #e0f2fe;
+  color: #1e3a8a;
+}
+
+/* ---------- Back Button ---------- */
+.back-btn {
+  display: block;
+  text-align: center;
+  background: #2563eb;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 30px;
+  width: 200px;
+  margin: 30px auto;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+  background: #1d4ed8;
+  transform: scale(1.05);
+}
+
+/* ---------- DARK THEME ---------- */
+body.dark {
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  color: #e2e8f0;
+}
+
+body.dark section {
+  background: #1e293b;
+  box-shadow: 0 5px 20px rgba(255,255,255,0.05);
+}
+
+body.dark header {
+  background: linear-gradient(120deg, #0f172a, #334155);
+}
+
+body.dark button,
+body.dark .btn {
+  background: #334155;
+  color: #e2e8f0;
+}
+
+body.dark button:hover,
+body.dark .btn:hover {
+  background: #475569;
+}
+
+body.dark th {
+  background: #334155;
+  color: #e2e8f0;
+}
+
+body.dark td {
+  color: #e2e8f0;
+}
+
+body.dark input,
+body.dark select {
+  background: #334155;
+  border: 1px solid #475569;
+  color: #e2e8f0;
+}
+
+body.dark .back-btn {
+  background: #475569;
+}
+
+body.dark .theme-toggle {
+  background: #334155;
+  color: white;
+}
+
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 2rem;
+  }
+  section {
+    margin: 20px;
+    padding: 20px;
+  }
+}

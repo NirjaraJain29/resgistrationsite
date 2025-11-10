@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thank You | TechFest 2025</title>
+  <link rel="stylesheet" href="style2.css">
+  <style>
+    .thankyou-box {
+      text-align: center;
+      animation: fadeIn 1s ease-in;
+    }
+
+    .thankyou-box h1 {
+      font-size: 2.5rem;
+      color: #2563eb;
+    }
+
+    .thankyou-box p {
+      font-size: 1.2rem;
+      color: #334155;
+      margin-top: 10px;
+    }
+
+    .thankyou-box img {
+      width: 120px;
+      margin: 20px 0;
+      animation: pop 0.8s ease-out;
+    }
+
+    @keyframes pop {
+      from { transform: scale(0.5); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Registration Successful 🎉</h1>
+  </header>
+
+  <section class="thankyou-box">
+    <img src="https://cdn-icons-png.flaticon.com/512/845/845646.png" alt="Success Icon">
+    <h1>Thank You, <span id="userName">Participant</span>!</h1>
+    <p>Your registration for <strong>TechFest 2025</strong> has been successfully submitted.</p>
+    <p>We’re excited to have you join us!</p>
+
+    <a href="participants2.html" class="btn">View All Participants</a>
+    <br>
+    <a href="index2.html" class="back-btn">← Back to Home</a>
+  </section>
+
+  <script>
+    // Get participant name from URL and display it
+    const params = new URLSearchParams(window.location.search);
+    const name = params.get("name");
+    if (name) {
+      document.getElementById("userName").textContent = decodeURIComponent(name);
+    }
+  </script>
+<script>
+  const themeButton = document.createElement("button");
+  themeButton.className = "theme-toggle";
+  themeButton.title = "Toggle theme";
+  themeButton.textContent = "🌓";
+  document.querySelector("header").appendChild(themeButton);
+
+  // Load saved theme
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") document.body.classList.add("dark");
+
+  // Toggle theme
+  themeButton.addEventListener("click", () => {
+    document.body.classList.toggle("dark");
+    const theme = document.body.classList.contains("dark") ? "dark" : "light";
+    localStorage.setItem("theme", theme);
+  });
+</script>
+
+</body>
+</html>

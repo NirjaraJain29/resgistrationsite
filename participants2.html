@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registered Participants</title>
+  <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+  <header>
+    <h1>Registered Participants</h1>
+    <p>Here are all the people who registered for TechFest 2025</p>
+  </header>
+
+  <section>
+    <table id="participantTable">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Event Type</th>
+          <th>Gender</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <a href="index2.html" class="back-btn">← Back to Home</a>
+  </section>
+
+  <script>
+    const participants = JSON.parse(localStorage.getItem("participants")) || [];
+    const tbody = document.querySelector("#participantTable tbody");
+
+    if (participants.length === 0) {
+      tbody.innerHTML = `<tr><td colspan="5">No participants registered yet.</td></tr>`;
+    } else {
+      participants.forEach(p => {
+        const row = document.createElement("tr");
+        row.innerHTML = `
+          <td>${p.name}</td>
+          <td>${p.email}</td>
+          <td>${p.phone}</td>
+          <td>${p.eventType}</td>
+          <td>${p.gender}</td>
+        `;
+        tbody.appendChild(row);
+      });
+    }
+  </script>
+<script>
+  const themeButton = document.createElement("button");
+  themeButton.className = "theme-toggle";
+  themeButton.title = "Toggle theme";
+  themeButton.textContent = "🌓";
+  document.querySelector("header").appendChild(themeButton);
+
+  // Load saved theme
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme === "dark") document.body.classList.add("dark");
+
+  // Toggle theme
+  themeButton.addEventListener("click", () => {
+    document.body.classList.toggle("dark");
+    const theme = document.body.classList.contains("dark") ? "dark" : "light";
+    localStorage.setItem("theme", theme);
+  });
+</script>
+
+</body>
+</html>
